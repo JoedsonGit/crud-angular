@@ -1,0 +1,13 @@
+.mat-table{
+  overflow: auto;
+  max-height: 600px; // aparece o scrow
+  }
+
+  .action-column{ // metodo para posição das colunas
+    flex: 0 0 75px;
+  }
+  .action-column-header{ // metodo para posição das colunas
+    flex: 0 0 55px;
+  }
+
+

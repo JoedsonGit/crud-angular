@@ -1,0 +1,88 @@
+
+
+<mat-table  [dataSource]="clientes">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="_id">
+    <mat-header-cell  *matHeaderCellDef> Codigo </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente._id }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell  *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.name }} </mat-cell>
+  </ng-container>
+
+  <!-- category Column -->
+  <ng-container matColumnDef="status">
+    <mat-header-cell  *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.status.replace('1','Ativa').replace('0','Inativar') }}
+      <mat-icon aria-hidden="false" aria-label="Status" >{{ cliente.status |  status }}</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="tipopessoa">
+    <mat-header-cell  *matHeaderCellDef> Tipo </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.tipopessoa }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="cpf_cnpj">
+    <mat-header-cell  *matHeaderCellDef> Cpf/Cnpj </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.cpf_cnpj }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="rg_ie">
+    <mat-header-cell  *matHeaderCellDef> Rg/IE </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.rg_ie }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="datacadastro">
+    <mat-header-cell  *matHeaderCellDef> Data do cadastro </mat-header-cell>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-cell  *matCellDef="let cliente" > {{ cliente.datacadastro | date:'dd/MM/yyyy' }} </mat-cell>
+  </ng-container>
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="telefone1">
+    <mat-header-cell  *matHeaderCellDef> Telefone principal </mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.telefone1 }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="telefone2">
+    <mat-header-cell  *matHeaderCellDef> Telefone secundário</mat-header-cell>
+    <mat-cell  *matCellDef="let cliente"> {{ cliente.telefone2 }} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+
+    <mat-header-cell *matHeaderCellDef class="action-column-header">
+      <button mat-mini-fab color="accent" aria-label="Adcionar um cliente">
+        <mat-icon (click)="onAdd()">add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let cliente" class="action-column">
+
+      <button mat-icon-button color="primary" aria-label="Editar cliente">
+        <mat-icon (click)="onEdit(cliente)">edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" aria-label="Remover cliente">
+        <mat-icon (click)="onDelete(cliente)">delete</mat-icon>
+      </button>
+
+    </mat-cell>
+
+  </ng-container>
+
+  <mat-header-row  *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row  *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
