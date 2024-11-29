@@ -85,7 +85,7 @@ export class ClienteFormComponent implements OnInit {
   getErrorMessage(fieldName: string){
     const field = this.form.get(fieldName);
 
-    if(field?.hasError('requied')){
+    if(field?.hasError('required')){
       return 'Campo obrigatório';
     }
 
@@ -100,6 +100,10 @@ export class ClienteFormComponent implements OnInit {
     }
 
     return 'Campo Inválido';
+  }
+
+  get editando(){
+    return Boolean(this.form.value._id);
   }
 
 }

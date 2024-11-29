@@ -37,3 +37,34 @@ mat-card{
   opacity: 1;
 }
 
+.input-personalizado::placeholder {
+  font-family: 'Arial', sans-serif; /* Define a fonte desejada */
+  font-size: 10px; /* Define o tamanho da fonte */
+  color: #888; /* Define a cor do placeholder */
+  font-weight: bold; /* Define o peso da fonte */
+}
+
+::ng-deep .label-personalizado .mat-form-field-label {
+  font-family: 'Arial', sans-serif; /* Fonte personalizada */
+  font-size: 10px; /* Tamanho da fonte */
+  color: #555; /* Cor do texto */
+  font-weight: bold; /* Peso do texto */
+}
+
+
+/* Cor de fundo da aba ativa */
+::ng-deep .mat-tab-group .mat-tab-label-active {
+  background-color: #FF5733; /* Cor da aba ativa */
+  color: #FFFFFF; /* Cor do texto da aba ativa */
+}
+
+/* Cor de fundo das abas inativas */
+::ng-deep .mat-tab-group .mat-tab-label {
+  background-color: #D3D3D3; /* Cor das abas inativas */
+  color: #000000; /* Cor do texto das abas inativas */
+}
+
+::ng-deep .mat-tab-group .mat-ink-bar {
+  // background-color: #FF5733 !important; /* Use a cor desejada com !important */
+}
+

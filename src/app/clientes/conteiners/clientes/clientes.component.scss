@@ -10,6 +10,11 @@ mat-card{
     min-width: 300px;
  }
 
+ .fildes-flex{
+  display: flex;
+  gap: 16px;
+}
+
 .loading-spinner {
     padding: 25px;
     background: rgba(0,0,0,0.15 );
@@ -18,3 +23,9 @@ mat-card{
     justify-content: center;
 
 }
+
+.mat-tab-group {
+  margin-bottom: 100px;
+}
+
+

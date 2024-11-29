@@ -9,7 +9,9 @@ import { ClienteFormComponent } from './conteiners/cliente-form/cliente-form.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientesListComponent } from './componets/clientes-list/clientes-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -24,7 +26,15 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppMaterialModule,
     SharedModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule,
+    MatTabsModule,
+    MatButtonModule,
+
   ]
 })
-export class ClientesModule { }
+export class ClientesModule {
+
+
+
+}
