@@ -21,6 +21,6 @@ export class ClienteResolver implements Resolve<Cliente> {
     if(route.params && route.params['id']){
       return this.service.loadById(route.params['id']);
     }
-    return of({ _id:'', name:'', status:'' , tipopessoa:'', cpf_cnpj:'', rg_ie:'', datacadastro: new Date(), telefone1:'' , telefone2:'' });
+    return of({ _id:'', name:'', status:'' , tipopessoa:'', cpf_cnpj:'', rg_ie:'', datacadastro: new Date(), telefone1:'' , telefone2:'', datanascimento:''});
   }
 }

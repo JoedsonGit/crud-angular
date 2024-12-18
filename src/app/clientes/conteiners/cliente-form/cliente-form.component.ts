@@ -16,18 +16,19 @@ export class ClienteFormComponent implements OnInit {
 
   // delcara e inicialisa o form ao mesmo tempo
   form = this.formBuilder.group({
-    _id:          [''],
-    name:         [''],
-    status:       [''],
-    tipopessoa:   [''],
-    cpf_cnpj:     ['' , [Validators.required,
+    _id:            [''],
+    name:           [''],
+    status:         [''],
+    tipopessoa:     [''],
+    cpf_cnpj:       ['' , [Validators.required,
                          // Validators.pattern(/^(\d{3}\.){2}\d{3}\-\d{2}$/),
                          Validators.minLength(11),
                          Validators.maxLength(14)]],
-    rg_ie:        [''],
-    // datacadastro: [new Date().toLocaleString()],
-    telefone1:    [''],
-    telefone2:    [''],
+    rg_ie:          [''],
+    // datacadastro:   [new Date()],
+    telefone1:      [''],
+    telefone2:      [''],
+    datanascimento: ['']
   });
 
   constructor(
@@ -42,6 +43,7 @@ export class ClienteFormComponent implements OnInit {
 
    }
 
+
   ngOnInit(): void {
     const cliente: Cliente = this.route.snapshot.data['cliente']
     this.form.setValue({
@@ -51,9 +53,10 @@ export class ClienteFormComponent implements OnInit {
       tipopessoa:     cliente.tipopessoa,
       cpf_cnpj:       cliente.cpf_cnpj,
       rg_ie:          cliente.rg_ie,
-      //datacadastro:   cliente.datacadastro,
+     // datacadastro:   cliente.datacadastro,
       telefone1:      cliente.telefone1,
-      telefone2:      cliente.telefone2
+      telefone2:      cliente.telefone2,
+      datanascimento: cliente.datanascimento,
     });
 
   }
@@ -104,6 +107,10 @@ export class ClienteFormComponent implements OnInit {
 
   get editando(){
     return Boolean(this.form.value._id);
+  }
+
+  get tipoPessoa() {
+   return String(this.form.value.tipopessoa);
   }
 
 }
